@@ -1,8 +1,8 @@
 .PHONY: help build dev test test-env
 
 # Docker image name and tag
-IMAGE:=wesleyburr/sage-notebook-trent
-TAG?=2021-09-07
+IMAGE:=sharptrick/sage-notebook
+TAG?=latest
 # Shell that make should use
 SHELL:=bash
 

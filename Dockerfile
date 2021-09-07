@@ -1,4 +1,4 @@
-ARG SAGE_VERSION=9.3
+ARG SAGE_VERSION=9.0
 ARG SAGE_PYTHON_VERSION=3.7
 ARG BASE_CONTAINER=jupyter/minimal-notebook
 FROM $BASE_CONTAINER
@@ -15,6 +15,7 @@ RUN apt-get update && \
     tk tk-dev \
     jq && \
     rm -rf /var/lib/apt/lists/*
+
 
 USER $NB_UID
 
