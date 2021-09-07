@@ -78,5 +78,5 @@ RUN echo ' \
 # Install FriCAS
 #RUN git clone --depth 1 https://github.com/fricas/fricas
 #RUN mkdir fr-build && cd fr-build && ../fricas/configure --with-lisp="sbcl --dynamic-space-size 4096" --prefix=/tmp/usr --enable-gnmp --enable-aldor && \
-    make && make install
+##    make && make install
 
