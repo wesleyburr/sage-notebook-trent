@@ -22,7 +22,7 @@ RUN apt-get update && \
     libxdmcp-dev \
     libxpm-dev \
     xvfb \
-    sbcl
+    sbcl && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
