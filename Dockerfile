@@ -13,7 +13,7 @@ RUN apt-get update && \
     imagemagick \
     texlive \
     tk tk-dev \
-    jq && \
+    jq  \
     libx11-dev \
     libxt-dev \
     libice-dev \
