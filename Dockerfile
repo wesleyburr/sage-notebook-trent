@@ -14,8 +14,16 @@ RUN apt-get update && \
     texlive \
     tk tk-dev \
     jq && \
+    libx11-dev \
+    libxt-dev \
+    libice-dev \
+    libsm-dev \
+    libxau-dev \
+    libxdmcp-dev \
+    libxpm-dev \
+    xvfb \
+    sbcl
     rm -rf /var/lib/apt/lists/*
-
 
 USER $NB_UID
 
@@ -63,4 +71,9 @@ RUN echo ' \
     ' | conda run -n sage sh && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
+
+# Install FriCAS
+RUN git clone --depth 1 https://github.com/fricas/fricas
+RUN mkdir fr-build && cd fr-build && ../fricas/configure --with-lisp="sbcl --dynamic-space-size 4096" --prefix=/tmp/usr --enable-gnmp --enable-aldor && \
+    make && make install
 
