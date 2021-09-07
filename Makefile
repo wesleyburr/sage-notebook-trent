@@ -2,7 +2,7 @@
 
 # Docker image name and tag
 IMAGE:=wesleyburr/sage-notebook-trent
-TAG?=latest
+TAG?=2021-09-07
 # Shell that make should use
 SHELL:=bash
 
