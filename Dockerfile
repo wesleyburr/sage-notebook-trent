@@ -33,13 +33,12 @@ RUN conda init bash
 # Install Sage conda environment
 RUN conda install --quiet --yes -n base -c conda-forge widgetsnbextension && \
     conda install -c conda-forge jupyter_nbextensions_configurator && \
+    conda install -c conda-forge jupyter_contrib_nbextensions && \
     conda create --quiet --yes -n sage -c conda-forge sage=$SAGE_VERSION python=$SAGE_PYTHON_VERSION && \
     conda clean --all -f -y && \
     npm cache clean --force && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
-
-
 
 # Install sagemath kernel and extensions using conda run:
 #   Create jupyter directories if they are missing
