@@ -32,11 +32,14 @@ RUN conda init bash
 
 # Install Sage conda environment
 RUN conda install --quiet --yes -n base -c conda-forge widgetsnbextension && \
+    conda install -c conda-forge jupyter_nbextensions_configurator && \
     conda create --quiet --yes -n sage -c conda-forge sage=$SAGE_VERSION python=$SAGE_PYTHON_VERSION && \
     conda clean --all -f -y && \
     npm cache clean --force && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
+
+
 
 # Install sagemath kernel and extensions using conda run:
 #   Create jupyter directories if they are missing
@@ -73,7 +76,7 @@ RUN echo ' \
     fix-permissions /home/$NB_USER
 
 # Install FriCAS
-RUN git clone --depth 1 https://github.com/fricas/fricas
-RUN mkdir fr-build && cd fr-build && ../fricas/configure --with-lisp="sbcl --dynamic-space-size 4096" --prefix=/tmp/usr --enable-gnmp --enable-aldor && \
+#RUN git clone --depth 1 https://github.com/fricas/fricas
+#RUN mkdir fr-build && cd fr-build && ../fricas/configure --with-lisp="sbcl --dynamic-space-size 4096" --prefix=/tmp/usr --enable-gnmp --enable-aldor && \
     make && make install
 
