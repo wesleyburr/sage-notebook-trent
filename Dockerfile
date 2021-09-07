@@ -1,6 +1,6 @@
 ARG SAGE_VERSION=9.0
 ARG SAGE_PYTHON_VERSION=3.7
-ARG BASE_CONTAINER=jupyter/minimal-notebook
+ARG BASE_CONTAINER=jupyter/datascience-notebook
 FROM $BASE_CONTAINER
 
 USER root
