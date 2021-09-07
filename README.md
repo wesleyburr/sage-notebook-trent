@@ -22,3 +22,7 @@ This Dockerfile is made possible by the work of https://sagemath.org/.
 
 ## Jupyter Docker Stacks - Community Stack version
 This project is developed with the helpful guide of [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/). The base container is **jupyter/minimal-notebook** and this **Community Stack** is setup [via the guide.](https://jupyter-docker-stacks.readthedocs.io/en/latest/contributing/stacks.html)
+
+## Original Working Version
+Original version was created and hosted by [SharpTrick](github.com/sharpTrick/sage-notebook), and all credit for getting the base Sage environment working goes to him. This
+version adds extensions that are useful for tutorials in Sage.
